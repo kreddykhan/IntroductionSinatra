@@ -73,7 +73,6 @@ post '/api/v1/users/:name/sessions' do
     user = User.find_by_name_and_password(params[:name], attributes["password"])
     if user
       user.to_json
-      puts "minor change"
     else
       error 400, {:error => "invalid login credentials"}.to_json
     end
